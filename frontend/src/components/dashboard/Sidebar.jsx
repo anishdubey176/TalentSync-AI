@@ -34,7 +34,7 @@ const Sidebar = ({ onCloseMobile }) => {
   ];
 
   return (
-    <aside className="w-64 h-[calc(100vh-4rem)] bg-white dark:bg-[#06050a] border-r border-gray-200 dark:border-white/5 flex flex-col justify-between fixed top-16 left-0 transition-colors duration-300">
+    <aside className="w-64 h-full bg-white dark:bg-[#06050a] border-r border-gray-200 dark:border-white/5 flex flex-col justify-between transition-colors duration-300">
       <div className="p-6 overflow-y-auto hide-scrollbar flex-1 min-h-0">
         {/* Navigation */}
         <nav className="flex flex-col gap-2">

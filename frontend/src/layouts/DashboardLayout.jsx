@@ -32,7 +32,7 @@ const DashboardLayout = () => {
     <div className="flex h-full w-full min-h-[calc(100vh-4rem)] relative overflow-hidden">
       {/* Sidebar - Desktop (always visible) and Mobile (Slide-over drawer) */}
       <div className={`
-        fixed inset-y-16 left-0 z-40 transform transition-transform duration-300 ease-in-out lg:translate-x-0
+        fixed top-16 bottom-0 left-0 z-40 transform transition-transform duration-300 ease-in-out lg:translate-x-0
         ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
         <Sidebar onCloseMobile={() => setSidebarOpen(false)} />
