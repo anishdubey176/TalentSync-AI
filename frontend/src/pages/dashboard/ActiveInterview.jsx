@@ -47,7 +47,8 @@ const ActiveInterview = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/interviews/generate', {
+        const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+        const response = await fetch(`${API_URL}/api/interviews/generate`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -92,7 +93,8 @@ const ActiveInterview = () => {
     setIsValidating(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/interviews/validate-answer', {
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const response = await fetch(`${API_URL}/api/interviews/validate-answer`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

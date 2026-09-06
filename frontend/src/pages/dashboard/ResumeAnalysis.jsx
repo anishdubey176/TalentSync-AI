@@ -56,7 +56,8 @@ const ResumeAnalysis = () => {
       formData.append('resume', selectedFile);
       formData.append('roleDescription', roleDescription);
 
-      const response = await fetch('http://localhost:5000/api/resume/analyze', {
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const response = await fetch(`${API_URL}/api/resume/analyze`, {
         method: 'POST',
         body: formData
       });

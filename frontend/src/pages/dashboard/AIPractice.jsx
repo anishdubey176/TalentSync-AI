@@ -104,7 +104,8 @@ const AIPractice = () => {
         setVoiceStatus('AI is thinking...');
 
         try {
-          const response = await fetch('http://localhost:5000/api/interviews/practice/chat', {
+          const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+          const response = await fetch(`${API_URL}/api/interviews/practice/chat`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -187,7 +188,8 @@ const AIPractice = () => {
     setIsTyping(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/interviews/practice/chat', {
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const response = await fetch(`${API_URL}/api/interviews/practice/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
