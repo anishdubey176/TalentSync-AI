@@ -104,7 +104,7 @@ const AIPractice = () => {
         setVoiceStatus('AI is thinking...');
 
         try {
-          const API_URL = import.meta.env.VITE_API_URL || 'https://talentsync-ai-poh7.onrender.com';
+          const API_URL = import.meta.env.VITE_API_URL || 'https://talentsync-ai-peh7.onrender.com';
           const response = await fetch(`${API_URL}/api/interviews/practice/chat`, {
             method: 'POST',
             headers: {
@@ -188,7 +188,7 @@ const AIPractice = () => {
     setIsTyping(true);
 
     try {
-      const API_URL = import.meta.env.VITE_API_URL || 'https://talentsync-ai-poh7.onrender.com';
+      const API_URL = import.meta.env.VITE_API_URL || 'https://talentsync-ai-peh7.onrender.com';
       const response = await fetch(`${API_URL}/api/interviews/practice/chat`, {
         method: 'POST',
         headers: {
