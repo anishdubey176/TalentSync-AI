@@ -113,17 +113,17 @@ const Navbar = () => {
               className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity pl-4 border-l border-gray-200 dark:border-white/10"
             >
               <div className="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center overflow-hidden border border-gray-300 dark:border-white/10">
-                <img src={profile.avatar} alt="User" className="w-full h-full object-cover" />
+                <img src={profile?.avatar || "https://api.dicebear.com/7.x/avataaars/svg?seed=Candidate"} alt="User" className="w-full h-full object-cover" />
               </div>
-              <span className="text-slate-900 dark:text-white text-sm font-medium hidden sm:block">{profile.fullName}</span>
+              <span className="text-slate-900 dark:text-white text-sm font-medium hidden sm:block">{profile?.fullName || "Candidate"}</span>
               <ChevronDown className={`w-4 h-4 text-slate-500 dark:text-gray-400 transition-transform duration-200 ${showDropdown ? 'rotate-180' : ''}`} />
             </div>
 
             {showDropdown && (
               <div className="absolute right-0 mt-3 w-56 bg-white dark:bg-[#130f1e] border border-gray-200 dark:border-white/10 rounded-xl shadow-xl dark:shadow-2xl overflow-hidden z-50 animate-fade-in">
                 <div className="p-4 border-b border-gray-100 dark:border-white/5">
-                  <p className="text-sm font-semibold text-slate-900 dark:text-white truncate">{profile.fullName}</p>
-                  <p className="text-xs text-slate-500 dark:text-gray-400 mt-0.5 truncate">{profile.email}</p>
+                  <p className="text-sm font-semibold text-slate-900 dark:text-white truncate">{profile?.fullName || "Candidate"}</p>
+                  <p className="text-xs text-slate-500 dark:text-gray-400 mt-0.5 truncate">{profile?.email || ""}</p>
                 </div>
                 <div className="p-2">
                   <button 

@@ -104,11 +104,11 @@ const Sidebar = ({ onCloseMobile }) => {
           className="flex items-center gap-3 px-2 cursor-pointer group"
         >
           <div className="w-10 h-10 rounded-full bg-purple-900/50 flex items-center justify-center overflow-hidden border border-white/10 group-hover:border-purple-500/50 transition-colors shrink-0">
-            <img src={profile.avatar} alt="User" className="w-full h-full object-cover" />
+            <img src={profile?.avatar || "https://api.dicebear.com/7.x/avataaars/svg?seed=Candidate"} alt="User" className="w-full h-full object-cover" />
           </div>
           <div className="flex flex-col overflow-hidden">
             <div className="flex items-center gap-2">
-              <span className="text-slate-900 dark:text-white text-sm font-medium truncate max-w-[90px]">{profile.fullName}</span>
+              <span className="text-slate-900 dark:text-white text-sm font-medium truncate max-w-[90px]">{profile?.fullName || "Candidate"}</span>
               {!showPremium && (
                 <button 
                   onClick={(e) => {
@@ -122,7 +122,7 @@ const Sidebar = ({ onCloseMobile }) => {
                 </button>
               )}
             </div>
-            <span className="text-slate-500 dark:text-gray-500 text-xs truncate max-w-[130px]">{profile.email}</span>
+            <span className="text-slate-500 dark:text-gray-500 text-xs truncate max-w-[130px]">{profile?.email || ""}</span>
           </div>
         </div>
       </div>
