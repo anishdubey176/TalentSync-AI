@@ -1,0 +1,27 @@
+services:
+  # Backend Service
+  - type: web
+    name: talentsync-ai-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: OPENAI_API_KEY
+        sync: false # User needs to provide this in Render dashboard
+    rootDir: backend
+
+  # Frontend Service
+  - type: web
+    name: talentsync-ai-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: frontend/dist
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: talentsync-ai-backend
+          envVarKey: RENDER_EXTERNAL_URL
+    rootDir: frontend
