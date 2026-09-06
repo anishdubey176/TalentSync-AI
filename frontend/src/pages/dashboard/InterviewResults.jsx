@@ -25,7 +25,7 @@ const InterviewResults = () => {
 
     const runEvaluation = async () => {
       try {
-        const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+        const API_URL = import.meta.env.VITE_API_URL || 'https://talentsync-ai-poh7.onrender.com';
         const response = await fetch(`${API_URL}/api/interviews/evaluate`, {
           method: 'POST',
           headers: {

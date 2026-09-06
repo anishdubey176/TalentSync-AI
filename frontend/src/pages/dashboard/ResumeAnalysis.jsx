@@ -56,7 +56,7 @@ const ResumeAnalysis = () => {
       formData.append('resume', selectedFile);
       formData.append('roleDescription', roleDescription);
 
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const API_URL = import.meta.env.VITE_API_URL || 'https://talentsync-ai-poh7.onrender.com';
       const response = await fetch(`${API_URL}/api/resume/analyze`, {
         method: 'POST',
         body: formData

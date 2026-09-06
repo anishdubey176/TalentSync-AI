@@ -47,7 +47,7 @@ const ActiveInterview = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+        const API_URL = import.meta.env.VITE_API_URL || 'https://talentsync-ai-poh7.onrender.com';
         const response = await fetch(`${API_URL}/api/interviews/generate`, {
           method: 'POST',
           headers: {
@@ -93,7 +93,7 @@ const ActiveInterview = () => {
     setIsValidating(true);
 
     try {
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const API_URL = import.meta.env.VITE_API_URL || 'https://talentsync-ai-poh7.onrender.com';
       const response = await fetch(`${API_URL}/api/interviews/validate-answer`, {
         method: 'POST',
         headers: {
